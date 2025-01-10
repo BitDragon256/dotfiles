@@ -1,0 +1,113 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+@import "colors.rasi"
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 true;
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    east;
+    anchor:                      east;
+    fullscreen:                  false;
+    width:                       110px;
+    x-offset:                    -10px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border:                  	 0px;
+    border-color:                @selected;
+    border-radius:               20px;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    background-color:               transparent;
+    children:                       [ listview ];
+    spacing:                        15px;
+    padding:                        15px;
+    margin:							-1px;
+    background-image:               url("~/.config/rofi/images/telescope.png", none);
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     15px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    background-color:            transparent;
+    text-color:                  @foreground;
+    orientation:                 horizontal;
+    border-radius:               10px;
+    padding:                     20px;
+    cursor:                      pointer;
+}
+element normal.normal,
+element alternate.normal {
+    background-color:            var(background);
+    text-color:                  var(foreground);
+}
+element normal.urgent,
+element alternate.urgent,
+element selected.active {
+    background-color:            var(urgent);
+    text-color:                  var(background);
+}
+element normal.active,
+element alternate.active,
+element selected.urgent {
+    background-color:            var(active);
+    text-color:                  var(background);
+}
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
+element-icon {
+    background-color: 		        inherit;
+    text-color:       		        inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           0px;
+    border:                         0px;
+}
+element-text {
+    background-color: 		     inherit;
+    text-color:       		     inherit;
+    font:			             "Font Awesome 6 Pro Bold 22";
+    expand:                      true;
+    horizontal-align:            0.5;
+    vertical-align:              0.5;
+    margin:                      0px 0px 0px 0px;
+}
+
