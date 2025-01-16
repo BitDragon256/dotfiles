@@ -42,10 +42,8 @@ const hyprland_themes = switch theme_name {
     },
 };
 
-export let data = #{
-    for_vcs: LOCAL,
-    cool_setting: if SYSTEM.hostname == "foo" { 10 } else { 25 }
-};
+export let on_desktop = SYSTEM.hostname == "HAL8000";
+export let on_laptop = !on_desktop;
 
 export let eggs = #{
     foot: #{
@@ -54,7 +52,7 @@ export let eggs = #{
     },
     fish: #{
         targets: "~/.config/fish",
-        templates: ["fish.config"],
+        templates: ["config.fish"],
     },
     starship: #{
         targets: #{
@@ -77,8 +75,10 @@ export let eggs = #{
     },
     waybar: #{
         targets: "~/.config/waybar",
+        templates: ["style.css"]
     },
     hypr: #{
         targets: "~/.config/hypr",
+	templates: ["hyprland.conf", "autostart.sh", "hyprlock.conf"]
     }
 };

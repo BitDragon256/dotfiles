@@ -20,7 +20,9 @@
 	"tray",
 	"network",
 	"pulseaudio",
+	"backlight",
 	"custom/notification",
+	"battery",
 	"custom/power-menu"
     ],
     "wlr/workspaces": {
@@ -38,7 +40,7 @@
 	"interval": 1,
 	"format": "<span font='HermitNerdFond' font_weight='bold' size='large' rise='-1pt'>&#xf2db;</span>  <span font_weight='bold'>{usage}%</span>",
 	"tooltip": false,
-	"on-click": "kitty bpytop"
+	"on-click": "neohtop"
     },
     "temperature": {
 	"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -46,7 +48,7 @@
 	"interval": 1,
 	"format": "<span font='HermitNerdFond' font_weight='bold' size='large' rise='-1pt'>&#xf06d;</span> <span font_weight='bold'>{temperatureC}°C</span>",
 	"tooltip": false,
-	"on-click": "kitty bpytop",
+	"on-click": "neohtop",
     },
     "clock": {
 	"format": "<span font_weight='bold'>{:%I:%M %p | %A %d %b}</span>",
@@ -191,7 +193,7 @@
     },
     "custom/notification": {
 	"tooltip": false,
-	"format": "{icon}",
+	"format": "<span font_weight='bold' size='large'>{icon}</span>",
 	"format-icons": {
 	  "notification": "<span foreground='red'><sup></sup></span>",
 	  "none": "",
@@ -208,6 +210,34 @@
 	"on-click": "swaync-client -t -sw",
 	"on-click-right": "swaync-client -d -sw",
 	"escape": true
-    }
+    },
+    "backlight": {
+		"states": {
+			"normal": 0,
+			"warning": 80,
+			"critical": 90
+		},
+		"format": "<span font='Font Awesome 6 Pro' font_weight='bold' size='large' rise='0pt'>{icon}</span>  <span font_weight='bold'>{percent}%</span>",
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"on-click": "brightnessctl set 1%",
+		"on-click-right": "brightnessctl set 100%",
+		"on-scroll-up": "brightnessctl set +2%",
+		"on-scroll-down": "brightnessctl set 2%-",
+		"smooth-scrolling-threshold": 5,
+		"tooltip": false,
+	},
+	"battery": {
+		"states": {
+			"normal": 21,
+			"warning": 20,
+			"critical": 10
+		},
+		"format": "<span font_weight='bold' size='large' rise='-1pt'>{icon} </span> <span font_weight='bold'>{capacity}%</span>",
+		"format-icons": [
+		    "", "", "", "", ""
+		],
+		"format-charging": "<span font_weight='bold' size='large' rise='2pt'>󱐋</span> <span font_weight='bold' rise='2pt'>{capacity}%</span>",
+		"tooltip": false,
+	},
 }
 

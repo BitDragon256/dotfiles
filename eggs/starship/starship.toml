@@ -27,7 +27,11 @@ $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
 
-palette = 'white_golden'
+# {% if on_desktop %}
+#<yolk> palette = 'white_golden'
+# {% else %}
+palette = 'gruvbox_dark'
+# {% end %}
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'

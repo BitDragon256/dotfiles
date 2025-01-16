@@ -1,0 +1,84 @@
+#!/bin/bash
+# scripts by adi1090x, modified by BitDragon256
+
+## Get data
+# TODO: get cover
+
+## Get status
+get_status() {
+	status=`playerctl -f "{{ lc(status) }}"`
+	if [[ $status == "playing" ]]; then
+		echo ""
+	else
+		echo "奈"
+	fi
+}
+
+## Get song
+get_song() {
+	song=`playerctl metadata -f "{{ title }}"`
+	if [[ -z "$song" ]]; then
+		echo "Offline"
+	else
+		echo "$song"
+	fi	
+}
+
+## Get artist
+get_artist() {
+	artist=`playerctl metadata -f "{{ artist }}"`
+	if [[ -z "$artist" ]]; then
+		echo ""
+	else
+		echo "$artist"
+	fi	
+}
+
+## Get time
+get_time() {
+	time=`playerctl metadata -f "{{ position / 1000000 }}"`
+	if [[ -z "$time" ]]; then
+		echo "0"
+	else
+		echo "$time"
+	fi	
+}
+# get_ctime() {
+    # TODO
+# }
+get_ttime() {
+    ttime=`playerctl metadata -f "{{ duration(position) }}"`
+	if [[ -z "$ttime" ]]; then
+		echo "0:00"
+	else
+		echo "$ttime"
+	fi	
+}
+
+## Get cover
+# get_cover() {
+    # TODO
+# }
+
+## Execute accordingly
+if [[ "$1" == "--song" ]]; then
+	get_song
+elif [[ "$1" == "--artist" ]]; then
+	get_artist
+elif [[ "$1" == "--status" ]]; then
+	get_status
+elif [[ "$1" == "--time" ]]; then
+	get_time
+elif [[ "$1" == "--ctime" ]]; then
+	get_ctime
+elif [[ "$1" == "--ttime" ]]; then
+	get_ttime
+elif [[ "$1" == "--cover" ]]; then
+	get_cover
+elif [[ "$1" == "--toggle" ]]; then
+	playerctl play-pause
+elif [[ "$1" == "--next" ]]; then
+	playerctl next
+elif [[ "$1" == "--prev" ]]; then
+	playerctl previous
+fi

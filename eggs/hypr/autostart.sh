@@ -18,11 +18,15 @@ rfkill unblock all &
 # set the cursor
 # hyprctl setcursor Bibata-Modern-Classic 24 &
 
+# {% if on_laptop %}
 # launch hyprpaper (wallpaper daemon thingy wtv)
-# hyprpaper &
+hyprpaper &
+# {% end %}
 
-# launch wallpaper engine
-$config/wallpapers.sh >> $config/log/wallpaper.log &
+# {% if on_desktop %}
+#<yolk> # launch wallpaper engine
+#<yolk> $config/wallpapers.sh >> $config/log/wallpaper.log &
+# {% end %}
 
 # launch pipewire
 ~/.local/bin/start-pipewire
@@ -30,6 +34,6 @@ $config/wallpapers.sh >> $config/log/wallpaper.log &
 # rest of autostart
 signal-desktop &
 discord --start-minimized &
-steam -silent &
+#<yolk> steam -silent & # {< if on_desktop >}
 sleep 3
 spotify-tray --hide-window &

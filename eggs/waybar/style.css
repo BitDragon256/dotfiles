@@ -1,24 +1,44 @@
+
+/* white_golden: https://coolors.co/e6dddf-f4e3d2-ebd4b1-ddc49c-cfb486-c2a17b-b58d6f-986640-684c38-373230 */
+
+/* {% if on_desktop %} */
+
+/*<yolk> @define-color background #CFB486 */
+/*<yolk> @define-color background-alt #b58d6f;*/
+/*<yolk> @define-color selected #b58d6f;*/
+/*<yolk> @define-color text #684C38;*/
+
+/*<yolk> @define-color foreground #080808;*/
+/*<yolk> @define-color active #080808;*/
+/*<yolk> @define-color urgent #080808;*/
+
+/* {% else %} */
+
+@define-color background #483760;
+@define-color background-alt #281657;
+@define-color selected #F08C90;
+@define-color text #FFFFFF;
+
+@define-color foreground #FFFFFF;
+@define-color active #6E77FF;
+@define-color urgent #8E3596;
+
+/* {% end %} */
+
 *{
 	font-family: HurmitNerdFont;
 	/* font-family: "Product Sans"; "Font Awesome 6 Duotone";*/
 	/* font-size: 15px; */
 	font-weight: bold;
-	color: #684C38;
+	color: @text;
 }
 
-/* https://coolors.co/e6dddf-f4e3d2-ebd4b1-ddc49c-cfb486-c2a17b-b58d6f-986640-684c38-373230 */
-@define-color background #CFB486 /*#7C543B*/;
-@define-color background-alt #b58d6f;
-@define-color selected #b58d6f;
-@define-color text #684C38;
-
-/* not used */
-@define-color foreground #080808;
-@define-color active #080808;
-@define-color urgent #080808;
-
 window#waybar {
-    background: linear-gradient(150deg, @background 20%, @background-alt 100%);
+/* {% if on_desktop %} */
+    /*<yolk> background: linear-gradient(150deg, @background 20%, @background-alt 100%);*/
+/* {% else %} */
+	background-color: @background;
+/* {% end %} */
 }
 
 window#waybar.hidden {
