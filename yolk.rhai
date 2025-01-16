@@ -35,5 +35,6 @@ export let eggs = #{
     },
     hypr: #{
         targets: "~/.config/hypr",
+	templates: ["hyprland.conf", "autostart.sh", "hyprlock.conf"]
     }
 };

@@ -20,21 +20,20 @@ rfkill unblock all &
 
 # {% if on_laptop %}
 # launch hyprpaper (wallpaper daemon thingy wtv)
-# hyprpaper &
+hyprpaper &
+# {% end %}
 
 # {% if on_desktop %}
-# launch wallpaper engine
-$config/wallpapers.sh >> $config/log/wallpaper.log &
+#<yolk> # launch wallpaper engine
+#<yolk> $config/wallpapers.sh >> $config/log/wallpaper.log &
 # {% end %}
 
 # launch pipewire
 ~/.local/bin/start-pipewire
 
-# {% if on_desktop %}
 # rest of autostart
 signal-desktop &
 discord --start-minimized &
-steam -silent &
+#<yolk> steam -silent & # {< if on_desktop >}
 sleep 3
 spotify-tray --hide-window &
-# {% end %}
