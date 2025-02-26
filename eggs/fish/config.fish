@@ -13,6 +13,8 @@ alias :q='exit'
 alias :q!='systemctl poweroff'
 alias restart='systemctl reboot'
 
+alias update-discord='sh ~/.config/hypr/scripts/update-discord.sh'
+
 fish_add_path /home/bitdragon/.spicetify
 
 # {% if on_desktop %}

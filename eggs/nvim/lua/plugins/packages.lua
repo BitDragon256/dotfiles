@@ -1,21 +1,21 @@
 return {
-    {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {
-		transparent = true,
-	},
-	styles = {
-		sidebars = "transparent",
-		floats = "transparent",
-	},
-    },
-    {
-	"xiyaowong/transparent.nvim",
-	lazy = false,
-	priority = 1000
-    },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --     	transparent = true,
+    --     },
+    --     styles = {
+    --     	sidebars = "transparent",
+    --     	floats = "transparent",
+    --     },
+    -- },
+    -- {
+    --     "xiyaowong/transparent.nvim",
+    --     lazy = false,
+    --     priority = 1000
+    -- },
     {
 	"romgrk/barbar.nvim",
 	dependencies = {
@@ -96,5 +96,8 @@ return {
 	--     })
 	-- end
     },
+    {
+	"savq/melange-nvim"
+    }
 }
 
