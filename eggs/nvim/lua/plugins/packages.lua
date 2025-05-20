@@ -47,7 +47,9 @@ return {
 	},
 	opts = {},
     },
-    { "neovim/nvim-lspconfig" },
+    {
+		"neovim/nvim-lspconfig",
+	},
     --[[
     {
 	    "dundalek/lazy-lsp.nvim",
@@ -98,6 +100,9 @@ return {
     },
     {
 	"savq/melange-nvim"
+    },
+    {
+	"voldikss/vim-floaterm"
     }
 }
 

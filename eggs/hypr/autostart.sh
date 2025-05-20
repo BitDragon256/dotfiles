@@ -29,7 +29,10 @@ hyprpaper &
 # {% end %}
 
 # launch pipewire
-~/.local/bin/start-pipewire
+# ~/.local/bin/start-pipewire
+
+# networkmanager applet
+nm-applet &
 
 # rest of autostart
 signal-desktop &

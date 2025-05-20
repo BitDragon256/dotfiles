@@ -30,6 +30,9 @@ require("noice").setup({
     },
 })
 
+-- SETUP CUSTOM LSPS
+require("lsps.pony_lsp")
+
 -- AUTOCOMPLETION WITH NVIM-CMP
 
 local cmp = require("cmp")
@@ -56,6 +59,7 @@ cmp.setup({
       { name = 'vsnip' },
     }, {
       { name = 'buffer' },
+      { name = 'nvim_lsp' },
     })
   })
 
@@ -71,10 +75,17 @@ cmp.setup({
  require("cmp_git").setup() ]]-- 
 
   -- Set up lspconfig.
+  -- local on_attach = function(client, bufnr)
+  --   local opts_buffer = { noremap = true, silent = true, buffer = bufnr }
+  --   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts_buffer)
+  --   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  --   print("pony lsp is attached")
+  -- end
   -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  -- require('lspconfig')['metals'].setup {
-  --   capabilities = capabilities
+  -- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  -- require('lspconfig').pony_lsp.setup {
+  --   capabilities = capabilities,
+  --   on_attach = on_attach,
   -- }
 
 -- LAZY LSP SERVER LOADING WITH LAZY-LSP
