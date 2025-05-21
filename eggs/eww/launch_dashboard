@@ -1,0 +1,17 @@
+#!/bin/bash
+
+eww open-many \
+    background \
+    system \
+    clock \
+    music \
+    github \
+    reddit \
+    youtube \
+    weather \
+    apps \
+    logout \
+    sleep \
+    reboot \
+    poweroff \
+    folders

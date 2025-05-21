@@ -1,8 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-vim.print("this should not be here")
-
 -- barbar (tab manager)
 
 -- Move to previous/next

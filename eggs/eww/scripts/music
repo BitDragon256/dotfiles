@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [[ "$1" == "--play" ]]; then
+    playerctl play
+elif [[ "$1" == "--pause" ]]; then
+    playerctl pause
+elif [[ "$1" == "--toggle" ]]; then
+    playerctl play-pause
+elif [[ "$1" == "--prev" ]]; then
+    playerctl previous
+elif [[ "$1" == "--next" ]]; then
+    playerctl next
+elif [[ "$1" == "--shuffle" ]]; then
+    current=$(playerctl shuffle)
+    if [[ $current == "Off" ]]; then
+	playerctl shuffle on
+    else
+	playerctl shuffle off
+    fi
+elif [[ "$1" == "--artist" ]]; then
+    playerctl metadata -f "{{artist}}"
+elif [[ "$1" == "--title" ]]; then
+    playerctl metadata -f "{{title}}"
+elif [[ "$1" == "--album" ]]; then
+    playerctl metadata -f "{{album}}"
+elif [[ "$1" == "--cover" ]]; then
+    playerctl metadata -f "{{mpris:artUrl}}"
+elif [[ "$1" == "--time" ]]; then
+    abs_pos=(`playerctl metadata -f "{{position}}"`)
+    max_pos=(`playerctl metadata -f "{{mpris:length}}"`)
+    let "rel_pos=$abs_pos*100/$max_pos"
+    echo "${rel_pos}"
+fi

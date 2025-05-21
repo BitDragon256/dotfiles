@@ -14,6 +14,7 @@ alias :q!='systemctl poweroff'
 alias restart='systemctl reboot'
 
 alias start-tor='sh ~/.config/hypr/scripts/start-tor.sh'
+alias update-discord='sh ~/.config/hypr/scripts/update-discord.sh'
 
 fish_add_path /home/bitdragon/.spicetify
 

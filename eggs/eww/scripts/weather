@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python ~/.config/eww/scripts/weather.py "$1"

@@ -1,26 +1,9 @@
 return {
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {
-    --     	transparent = true,
-    --     },
-    --     styles = {
-    --     	sidebars = "transparent",
-    --     	floats = "transparent",
-    --     },
-    -- },
-    -- {
-    --     "xiyaowong/transparent.nvim",
-    --     lazy = false,
-    --     priority = 1000
-    -- },
     {
 	"romgrk/barbar.nvim",
 	dependencies = {
-		'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-		'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+	    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+	    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 	},
 	init = function() vim.g.barbar_auto_setup = false end,
 	opts = {},
@@ -29,8 +12,8 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-	  "hrsh7th/cmp-nvim-lsp",
-	  "hrsh7th/cmp-buffer",
+	    "hrsh7th/cmp-nvim-lsp",
+	    "hrsh7th/cmp-buffer",
 	},
     },
     { "hrsh7th/vim-vsnip" },
@@ -42,23 +25,13 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-		"MunifTanjim/nui.nvim",
-		"rcarriga/nvim-notify",
+		-- "MunifTanjim/nui.nvim",
+		-- "rcarriga/nvim-notify",
 	},
-	opts = {},
     },
-    { "neovim/nvim-lspconfig" },
-    --[[
     {
-	    "dundalek/lazy-lsp.nvim",
-	    dependencies = {
-		    "neovim/nvim-lspconfig",
-		    { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-		    "hrsh7th/cmp-nvim-lsp",
-		    "hrsh7th/nvim-cmp",
-	    },
+	"neovim/nvim-lspconfig",
     },
-    --]]
     {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -102,5 +75,12 @@ return {
 	lazy = false, -- This plugin is already lazy
     },
     { "savq/melange-nvim" },
-}
+    { "voldikss/vim-floaterm" },
+    { "karb94/neoscroll.nvim" },
+    { "nvim-lualine/lualine.nvim" },
+    { url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }
 
+    -- TODO
+    -- overseer.nvim
+    -- resession.nvim
+}

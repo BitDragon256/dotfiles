@@ -29,14 +29,17 @@ hyprpaper &
 # {% end %}
 
 # launch pipewire
-~/.local/bin/start-pipewire
+# ~/.local/bin/start-pipewire
+
+# networkmanager applet
+nm-applet &
 
 # network manager applet
 nm-applet &
 
 # rest of autostart
 signal-desktop &
-discord --start-minimized &
+$scripts/start-discord.sh &
 #<yolk> steam -silent & # {< if on_desktop >}
 sleep 3
 spotify-tray --hide-window &
