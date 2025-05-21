@@ -31,6 +31,9 @@ hyprpaper &
 # launch pipewire
 ~/.local/bin/start-pipewire
 
+# network manager applet
+nm-applet &
+
 # rest of autostart
 signal-desktop &
 discord --start-minimized &

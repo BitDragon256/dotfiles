@@ -11,10 +11,9 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,calc,run,filebrowser";
+	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
     display-drun:               "APPS";
-    display-calc:               "CALC";
     display-run:                "RUN";
     display-filebrowser:        "FILES";
     display-window:             "WINDOW";

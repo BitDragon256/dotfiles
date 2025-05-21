@@ -1,5 +1,9 @@
 -- require("transparent").setup({})
 
+-- MELANGE COLOR THEME
+vim.opt.termguicolors = true
+vim.cmd.colorscheme 'melange'
+
 -- NOTIFY
 
 require("notify").setup({

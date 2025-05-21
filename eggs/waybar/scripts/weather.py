@@ -77,7 +77,7 @@ WEATHER_SYMBOLS = {
     "VeryCloudy": " ",
 }
 
-data = {}
+text = ""
 
 try:
     weather = requests.get("https://wttr.in/tuebingen+germany?format=j1", timeout=5).json()
@@ -86,10 +86,11 @@ try:
 
     weatherIcon = "<span font='HurmitNerdFont' rise='0pt' size='16pt' font_weight='bold'>" + weather_symbol + "</span>"
 
-    data['text'] = weatherIcon + weather['current_condition'][0]['temp_C'] + "°C"
+    text = weatherIcon + weather['current_condition'][0]['temp_C'] + "°C"
 except Exception as e:
-    data['text'] = "…"
+    text = "…"
 
-print(json.dumps(data))
+# print(json.dumps(data))
+print(text)
 
 #print(data)

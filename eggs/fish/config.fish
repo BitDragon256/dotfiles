@@ -13,6 +13,8 @@ alias :q='exit'
 alias :q!='systemctl poweroff'
 alias restart='systemctl reboot'
 
+alias start-tor='sh ~/.config/hypr/scripts/start-tor.sh'
+
 fish_add_path /home/bitdragon/.spicetify
 
 # {% if on_desktop %}

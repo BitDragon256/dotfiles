@@ -1,21 +1,21 @@
 return {
-    {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {
-		transparent = true,
-	},
-	styles = {
-		sidebars = "transparent",
-		floats = "transparent",
-	},
-    },
-    {
-	"xiyaowong/transparent.nvim",
-	lazy = false,
-	priority = 1000
-    },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --     	transparent = true,
+    --     },
+    --     styles = {
+    --     	sidebars = "transparent",
+    --     	floats = "transparent",
+    --     },
+    -- },
+    -- {
+    --     "xiyaowong/transparent.nvim",
+    --     lazy = false,
+    --     priority = 1000
+    -- },
     {
 	"romgrk/barbar.nvim",
 	dependencies = {
@@ -96,5 +96,11 @@ return {
 	--     })
 	-- end
     },
+    {
+	'mrcjkb/rustaceanvim',
+	version = '^6', -- Recommended
+	lazy = false, -- This plugin is already lazy
+    },
+    { "savq/melange-nvim" },
 }
 
